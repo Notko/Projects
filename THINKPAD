@@ -1,0 +1,57 @@
+
+>12 inch
+x230
+>15 inch
+t430, w530
+>loadsamoney
+idfk what new thinkpads are good but probably T480/T490/T14 (amd)/something
+>like $600 or so, more than a used xx30 but not enough to buy a new T14 or something
+get an xx30 and spend $300 on hookers
+>i have special needs like a powerful processor
+tell us more
+
+
+
+
+Don't buy anything OTHER THAN IBM/Lenovo ThinkPad T, X, and W/P Series if you want the Real Business Experience™
+>Other business laptops are welcome in /tpg/ (Dell Latitude/Precision, HP EliteBook/ZBook)
+
+Why ThinkPad?
+>Used machines are plentiful and cheap
+>Excellent keyboards, tactile feel and quiet
+>Great durability: magnesium roll cage for structural integrity, with high quality plastic body panels
+>Utilitarian design: e.g. indicator LEDs, 7 row keyboard layout on older models
+>Docking stations that easily turns your laptop into a desktop
+>Easy to repair (most models), upgrade & maintain thanks to readily available service manuals for every model, spare parts easy & cheap to obtain
+>Excellent Linux & *BSD support
+
+ThinkWiki - General info about ThinkPads and specs
+https://www.thinkwiki.org/wiki/ThinkWiki
+
+Modern models:
+>X220/X230 - 12", 768p, cheap and light
+>T420/T430 - 14", 900p (1080p w/mod board), Ivy Bridge support on T420 w/coreboot, quad core upgrade possible, old keyboard swap on xx30 series
+>T520/530; W520/530 - 15", 1080p, DTR, 32GB RAM on quad core models
+>T440s/T450(s)/T460(s)/T470(s) - ultraportables, good battery life
+>T440p/540p; W540/1 - Last ThinkPads with socketed processors, easily replaceable trackpad (W541 doesn't need trackpad replacement)
+>T480 - last "real" ThinkPad, battery bridge system, excellent performance/battery life, getting cheaper
+
+Upgraded models:
+>X210 - X200/X201, i5-8250U quad core
+>X62/X63 - X61, i5-5250U
+>T70 - T60, i7-7700HQ
+IPS displays, USB 3.0, M.2 x4, MiniDP, no dock
+https://forum.51nb.com/forum.php?mod=forumdisplay&fid=117
+
+BIOS replacement:
+https://coreboot.org
+>Most models from xx30 series and older, X131e, X1 Carbon (1st Gen) & T440p
+https://libreboot.org
+>T60 (check lcd), X60(s/t), X200(s/t. -s requires soldering), T400(s)/500, W500
+
+Additional resources:
+https://biosimage.booru.org
+https://1vyra.in
+
+UEFI patches:
+https://github.com/digmorepaka/thinkpad-firmware-patches
