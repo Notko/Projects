@@ -24,6 +24,7 @@ section{
     padding: 10px;
     font-size: 20px;
 }
+.outro,
 .intro{
     color: rgb(58, 58, 58);
     height: 50vh;
@@ -36,6 +37,7 @@ section{
 .intro h1{
     font-size: 50px;
 }
+.outro button,
 .intro button,
 .match button{
     width: 150px;
@@ -79,6 +81,9 @@ div.fadeIn{
     opacity: 1;
     pointer-events: all;
 }
+
+
+
 
 @keyframes shakePlayer {
     0%{
