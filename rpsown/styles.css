@@ -6,14 +6,14 @@ body {
     display: flex;
     justify-content: center;
 }
-.selection {
+.selections button {
     margin: 1rem;
     cursor: pointer;
     font-size: 1.5rem;
     transition: 100ms;
 }
 
-.selection:hover {
+.selections button:hover {
     transform: scale(1.1);
     
 }

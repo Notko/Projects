@@ -3,20 +3,28 @@ const btnRock = document.querySelector("#rock")
 const btnPaper = document.querySelector("#paper")
 const btnScissors = document.querySelector("#scissors")
 
-
+let playerChoice = ""
 let computerScore = 0;
 let playerScore = 0;
 
 
 function computerPlay() {
-    let selection =["Rock", "Paper", "Scissors"]
-    return selection[Math.floor(Math.random() * selection.length)];
+    let cSelection =["rock", "paper", "scissors"]
+    return cSelection[Math.floor(Math.random() * cSelection.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+function playerPlay() {
     
+    btnRock.addEventListener('click', function(){
+        playerChoice = "rock"
+    })
+    return console.log(playerChoice)
+}
+
+
+
+
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "It's a tie";
     } else if 
@@ -47,9 +55,10 @@ function playRound(playerSelection, computerSelection) {
 
 }
 function game() {
+    //let pSelection = document.querySelectorAll
     let round;
     for (round = 0; round < 5; round++) {
-        let playerSelection = prompt("Enter *rock*, *paper*, or *scissors*")
+        let playerSelection = playerPlay();
         let computerSelection = computerPlay();
         console.log(`Computer chose ${computerSelection}`);
         console.log(playRound(playerSelection, computerSelection))
