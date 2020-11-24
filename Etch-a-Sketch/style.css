@@ -1,0 +1,16 @@
+.userInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.square {
+    border: 1px solid gray;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+
+}
