@@ -1,26 +1,48 @@
+
 const container = document.querySelector(".container")
-
 const btnSubmit = document.querySelector(".userInput button");
-/*
-function getSquares(){
-    const desiredSquares = document.querySelector(".userInput input").value
-    return console.log(desiredSquares)
-}
-*/
 
-//on submit button click this happens
-btnSubmit.addEventListener('click', ()=> {
+createGrid = () => {
+  for (let i = 0; i < 256; i++) {
+    const div = document.createElement("div");
+    div.classList.add("square");
+    container.appendChild(div);
+  }
+};
+
+
+
+function updateContainer(){
+    const desiredSquares = document.querySelector(".userInput input").value 
     container.innerHTML= ""
-    const desiredSquares = document.querySelector(".userInput input").value
+    container.style.setProperty(
+        "grid-template-columns", `repeat(${desiredSquares}, 1fr)`
+    )
+    container.style.setProperty(
+        "grid-template-rows", `repeat(${desiredSquares}, 1fr)`
+    )
     getSquares(desiredSquares)
-})
+}
 
 function getSquares(x){
-if (x <= 100) {
+if (x <= 64 && x >= 16) {
 for (i = 0; i < (x * x); i++){
- let newDiv = document.createElement("div");
+ const newDiv = document.createElement("div");
     newDiv.classList.add("square")
     container.appendChild(newDiv)
     }
-} else return
+  } 
 }
+
+container.addEventListener('mouseover', function(e){
+  if (e.target && e.target.nodeName == "DIV") {
+   e.target.classList.replace("square", "black") 
+  }
+})
+
+
+
+btnSubmit.addEventListener('click', updateContainer)
+
+
+createGrid();

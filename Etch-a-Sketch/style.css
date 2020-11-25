@@ -6,11 +6,26 @@
 }
 
 .square {
-    border: 1px solid gray;
-    min-width: 20px;
-    min-height: 20px;
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
+    background-color: white;
+    border: 1px solid black;
+}
+.black {
+    background-color: black;
+}
 
+.container {
+    margin-top: 25px;
+    margin-right: 40px;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+    border: 5px solid black;
+    border-radius: 5px;
+    height: 520px;
+    width: 520px;
+}
+
+.hovered {
+    background-color: black;
+    border: 1px solid black;
 }
