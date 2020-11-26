@@ -1,6 +1,8 @@
 
 const container = document.querySelector(".container")
-const btnSubmit = document.querySelector(".userInput button");
+const btnSubmit = document.querySelector(".userInput #submit");
+const btnColours =document.querySelectorAll(".colour-choice")
+let colour = "black"
 
 createGrid = () => {
   for (let i = 0; i < 256; i++) {
@@ -9,6 +11,15 @@ createGrid = () => {
     container.appendChild(div);
   }
 };
+
+
+btnColours.forEach(btnColour => {
+  btnColour.addEventListener('click', () =>{
+    colour = btnColour.dataset.colour
+    console.log(colour)
+  
+  })
+})
 
 
 
@@ -31,18 +42,44 @@ for (i = 0; i < (x * x); i++){
     newDiv.classList.add("square")
     container.appendChild(newDiv)
     }
+  } else {
+  }
+}
+/*
+function changeColour(){
+  if (colour === "black"){
+    container.addEventListener('mouseover', function(e){
+      if (e.target && e.target.nodeName == "DIV") {
+        e.target.classList.replace("square", "black") 
+      }
+    })
   } 
 }
 
+container.addEventListener('mouseover', changeColour)
+*/
+
+
 container.addEventListener('mouseover', function(e){
-  if (e.target && e.target.nodeName == "DIV") {
-   e.target.classList.replace("square", "black") 
+  if (colour === "black") {
+    if (e.target && e.target.nodeName == "DIV") {
+   // e.target.classList.remove("rainbow")
+    e.target.style.backgroundColor = "black"
+    }
+  }
+  if (colour === "rainbow") {
+    if (e.target && e.target.nodeName == "DIV") {
+    //e.target.classList.remove("black")
+    e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    }
   }
 })
+//make them replace , find way to clear all classes. remove?
 
 
 
 btnSubmit.addEventListener('click', updateContainer)
+
 
 
 createGrid();

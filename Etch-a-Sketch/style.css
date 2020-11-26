@@ -11,7 +11,19 @@
 }
 .black {
     background-color: black;
+    border: 1px solid black;
 }
+
+.gray {
+    background-color: gray;
+    border: 1px solid black;
+}
+
+.rainbow {
+    background-color: hotpink;
+    border: 1px solid black;
+}
+
 
 .container {
     margin-top: 25px;
