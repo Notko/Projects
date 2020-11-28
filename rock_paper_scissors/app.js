@@ -55,3 +55,4 @@ buttons.forEach(button =>{
         playRound(button.textContent)
     })
 })
+//windows
