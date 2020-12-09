@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <button data-="">1</button>
+    </div>
+</body>
+<script>
+
+function add(a, b) {
+    return a + b;
+};
+
+function subtract(a, b) {
+    return a - b;
+};
+
+function multiply(a, b) {
+    return a * b;
+};
+
+function divide(a, b) {
+    return a / b;
+};
+
+function operate(operand, a, b) {
+    switch(operand) {
+        case "+":
+            return add(a, b)
+            break
+        case "-":
+            return subtract(a, b)
+            break
+        case "*": 
+            return multiply(a, b)
+        case "/":
+            return divide(a, b)
+            break
+
+    }
+}
+console.log(operate("+", 2, 3))
+
+</script>
+</html>
