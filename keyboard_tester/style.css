@@ -1,0 +1,21 @@
+
+
+.row {
+    width: 100%;
+    height: 60px;
+}
+
+.one, .two, .three, .four, .five, .six {
+    margin: 10px 0 0 0;
+}
+
+button {
+    color: black;
+    width: 110px;
+    height: 60px;
+}
+
+.working {
+    
+    background: red;
+}
