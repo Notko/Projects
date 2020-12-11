@@ -26,22 +26,27 @@
             <button class="numbers" data-="9">9</button>
         </div>
         <div class="operandContainer">
-            <button class="operands" data-="+">+</button>
-            <button class="operands" data-="-">-</button>
-            <button class="operands" data-="*">*</button>
-            <button class="operands" data-="/">/</button>
+            <button class="operators" data-="+">+</button>
+            <button class="operators" data-="-">-</button>
+            <button class="operators" data-="*">*</button>
+            <button class="operators" data-="/">/</button>
             <button class="equals" data-="=">=</button>
+            <button class="ac">AC</button>
         </div>
 
 </div>
 </body>
 <script>
 
-const operands =Array.from(document.querySelectorAll(".numbers"))
+const operands = Array.from(document.querySelectorAll(".numbers"))
+const operators = Array.from(document.querySelectorAll(".operators"))
 const display = document.querySelector(".display")
 const equals = document.querySelector(".equals")
+const ac = document.querySelector(".ac")
+
 let currentOperand = "0";
 let secondOperand = "5";
+let currentOperator = "";
 let newThing = 0
 let sum = 0;
 
@@ -57,7 +62,24 @@ function getOperand1() {
     })
 }
 
+function getOperand2() {
+    operands.map(e => {
+        e.addEventListener("click",() =>{
+            console.log(e.textContent)
+            display.textContent += e.textContent
+            secondOperand += Number(e.textContent)
+        }) 
+    })
+}
 
+function getOperator() {
+    operators.map(e => {
+        e.addEventListener("click", () => {
+            console.log(e.textContent)
+            currentOperator = e.textContent
+        })
+    })
+}
 
 
 ///////////////////////////////////////
@@ -98,14 +120,23 @@ function operate(operand, a, b) {
 }
 console.log(operate("-", 10, 3))
 
+function clearAll() {
+    currentOperand = "0";
+    secondOperand = "5";
+    currentOperator = "";
+    newThing = 0
+    sum = 0;
+}
 
 //run stuff//
 
 
 getOperand1()
+getOperator()
+
 
 equals.addEventListener('click', () => {
-    console.log(operate("+", Number(currentOperand), Number(secondOperand)))
+    console.log(operate(currentOperator, Number(currentOperand), Number(secondOperand)))
 })
 
 </script>
