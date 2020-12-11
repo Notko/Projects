@@ -1,21 +1,39 @@
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 70px;
+}
 
+.container{
+
+    display: flex;
+    flex-direction: column;
+    
+}
 
 .row {
     width: 100%;
-    height: 60px;
+    height: 10px;
 }
 
 .one, .two, .three, .four, .five, .six {
-    margin: 10px 0 0 0;
+    margin: 40px 0 10px 0;
 }
 
 button {
     color: black;
-    width: 110px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 
 .working {
     
     background: red;
+}
+
+#space {
+    width: 500px;
+    height: 5
+    30px;
 }
