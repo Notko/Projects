@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
@@ -31,114 +32,8 @@
             <button class="operators" data-="*">*</button>
             <button class="operators" data-="/">/</button>
             <button class="equals" data-="=">=</button>
-            <button class="ac">AC</button>
         </div>
-
+        <button class="ac" id="ac">AC</button>
 </div>
 </body>
-<script>
-
-const operands = Array.from(document.querySelectorAll(".numbers"))
-const operators = Array.from(document.querySelectorAll(".operators"))
-const display = document.querySelector(".display")
-const equals = document.querySelector(".equals")
-const ac = document.querySelector(".ac")
-
-let currentOperand = "0";
-let secondOperand = "5";
-let currentOperator = "";
-let newThing = 0
-let sum = 0;
-
-
-//function for clicking and receiving number
-function getOperand1() {
-    operands.map(e => {
-        e.addEventListener("click",() =>{
-            console.log(e.textContent)
-            display.textContent += e.textContent
-            currentOperand += Number(e.textContent)
-            //add some sort of updater for currentoperand stored value??
-        }) 
-    })
-}
-
-function getOperand2() {
-    operands.map(e => {
-        e.addEventListener("click",() =>{
-            console.log(e.textContent)
-            display.textContent += e.textContent
-            secondOperand += Number(e.textContent)
-        }) 
-    })
-}
-
-function getOperator() {
-    operators.map(e => {
-        e.addEventListener("click", () => {
-            console.log(e.textContent)
-            currentOperator = e.textContent
-        })
-    })
-}
-
-
-///////////////////////////////////////
-//functions for all math operations>>//
-//////////////////////////////////////
-
-function add(a, b) {
-    return a + b;
-};
-
-function subtract(a, b) {
-    return a - b;
-};
-
-function multiply(a, b) {
-    return a * b;
-};
-
-function divide(a, b) {
-    return a / b;
-};
-
-function operate(operand, a, b) {
-    switch(operand) {
-        case "+":
-            return add(a, b)
-            break
-        case "-":
-            return subtract(a, b)
-            break
-        case "*": 
-            return multiply(a, b)
-        case "/":
-            return divide(a, b)
-            break
-
-    }
-}
-console.log(operate("-", 10, 3))
-
-function clearAll() {
-    currentOperand = "0";
-    secondOperand = "5";
-    currentOperator = "";
-    newThing = 0
-    sum = 0;
-}
-
-//run stuff//
-
-
-getOperand1()
-getOperator()
-
-
-equals.addEventListener('click', () => {
-    console.log(operate(currentOperator, Number(currentOperand), Number(secondOperand)))
-})
-
-</script>
 </html>
