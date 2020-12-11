@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
     margin-top: 25px;
     margin-right: 40px;
@@ -14,3 +15,26 @@ div {
     background-color: white;
     border: 1px solid black;
 }
+=======
+
+
+.row {
+    width: 100%;
+    height: 60px;
+}
+
+.one, .two, .three, .four, .five, .six {
+    margin: 10px 0 0 0;
+}
+
+button {
+    color: black;
+    width: 110px;
+    height: 60px;
+}
+
+.working {
+    
+    background: red;
+}
+>>>>>>> 3448f89389697ce10e0f4f2a8660fb85cda233d3
