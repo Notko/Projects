@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-.container {
-    margin-top: 25px;
-    margin-right: 40px;
-    display: inline-grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    border: 5px solid black;
-    border-radius: 5px;
-    height: 200px;
-    width: 520px;
-}
-
-div {
-    background-color: white;
-    border: 1px solid black;
-}
-=======
 
 
 .row {
@@ -37,4 +19,3 @@ button {
     
     background: red;
 }
->>>>>>> 3448f89389697ce10e0f4f2a8660fb85cda233d3

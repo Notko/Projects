@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-const container = document.querySelector('.container');
-
-
-for (i = 0; i < 101; i++) {
-    const przycisk = document.createElement("div")
-    container.appendChild(przycisk)
-}
-=======
 /*
 map divs in pattern of keyboard
 make each div correspond to a keyboard in id or data and innerHTML
@@ -33,4 +24,3 @@ document.addEventListener("keydown", e => {
 })
 
 
->>>>>>> 3448f89389697ce10e0f4f2a8660fb85cda233d3
