@@ -1,50 +1,54 @@
 
-const operands = Array.from(document.querySelectorAll(".numbers"))
+const numbers = Array.from(document.querySelectorAll(".numbers"))
+    numbers.map(number => {
+        number.addEventListener("click", () => {
+            getNumber(number)
+        })
+    })
 const operators = Array.from(document.querySelectorAll(".operators"))
-const display = document.querySelector(".display")
-const equals = document.querySelector(".equals")
+    operators.map(operator => {
+        operator.addEventListener("click", () => {
+            currentOperator = operator.textContent
+            console.log(currentOperator)
+        })
+    })
+const display = document.querySelector(".display");
+const equals = document.querySelector(".equals");  
 const ac = document.getElementById("ac")
 
 
-let currentOperand = ""
-let secondOperand = ""
+let firstNumber = "";
+let secondNumber = "";
 let currentOperator = "";
+let sum = "";
+let sumB = ""
+display.textContent = "0"
 
 
 
-//function for clicking and receiving number
-function getOperand1() {
-    operands.map(e => {
-        e.addEventListener("click",() =>{
-            console.log(e.textContent)
-            display.textContent += e.textContent
-            currentOperand += Number(e.textContent)
-            //add some sort of updater for currentoperand stored value??
-        }) 
-    })
-}
+function getNumber(e) {
+    if (currentOperator === "" && sum === "") {
+        firstNumber += e.textContent
+       console.log(firstNumber)
+       display.textContent = firstNumber   
+    }
+    else if (currentOperator !== "") {
+        secondNumber += e.textContent
+        console.log(secondNumber)
+        display.textContent = ""
+        display.textContent = secondNumber
+    }
+    if (firstNumber !== "" && secondNumber !== "" && currentOperator !== "" && sum === ""){
+        sumB = operate(currentOperator, Number(firstNumber), Number(secondNumber))
+        console.log("sumb" + sumB)
+        if (sumB !== 0) {
+            firstNumber = sumB
+            display.textContent = sumB
+            secondNumber = ""
+        }
+    }
+}    
 
-function getOperand2() {
-    operands.map(e => {
-        e.addEventListener("click",() =>{
-            console.log(e.textContent)
-            display.textContent += e.textContent
-            secondOperand += e.textContent
-            console.log(secondOperand)
-        }) 
-    })
-   
-}
-
-function getOperator() {
-    operators.map(e => {
-        e.addEventListener("click", () => {
-            console.log(e.textContent)
-            currentOperator = e.textContent
-            getOperand2()
-        })
-    })
-}
 
 
 ///////////////////////////////////////
@@ -67,8 +71,8 @@ function divide(a, b) {
     return a / b;
 };
 
-function operate(operand, a, b) {
-    switch(operand) {
+function operate(operator, a, b) {
+    switch(operator) {
         case "+":
             return add(a, b)
             break
@@ -84,30 +88,30 @@ function operate(operand, a, b) {
     }
 }
 
+//console.log(operate("+", 10, 15))
 
-function clearAll() {
-    currentOperand = "";
-    secondOperand = "";
+ac.addEventListener("click", () => {
+    firstNumber = "";
+    secondNumber = "";
     currentOperator = "";
-    display.textContent = ""
-}
-
-//run stuff//
-getOperand1()
-
-operators.map(e =>{
-    e.addEventListener("click", ()=> {
-          getOperand2()
-    })
-  
+    sum = "";
+    sumB = ""
+    display.textContent = "0"
 })
 
-ac.addEventListener('click', clearAll)
 
-equals.addEventListener('click', () => {
-    console.log("operand ONE " + currentOperand)
-    console.log("operand TWO " + secondOperand)
-    console.log(operate(currentOperator, Number(currentOperand), Number(secondOperand)))
-    //console.log(operate("/", 20, 10))
-    getOperand1()
-})
+equals.addEventListener("click", () => {
+    sum = operate(currentOperator, Number(firstNumber), Number(secondNumber))
+    console.log(sum)
+    display.textContent = sum
+    currentOperator = ""
+    if (sum !==undefined) {
+         firstNumber = sum 
+     } else {
+         firstNumber = 0
+     }
+     sum = ""
+     secondNumber = ""
+    console.log("firstNo" + ":" + firstNumber)
+    console.log("secondNo" + ":" + secondNumber)
+});
